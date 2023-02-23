@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get("/delete_user/:the_user_id", {:controller => "users", :action => "destroy"})
 
   # Photo routes
+  post("/verify_credentials", { :controller => "photos", :action => "authenticate"})
 
   # CREATE
   get("/insert_photo_record", { :controller => "photos", :action => "create" })
@@ -41,7 +42,7 @@ Rails.application.routes.draw do
   # Comment routes
 
   # CREATE
-  get("/insert_comment_record", { :controller => "comments", :action => "create" })
+  post("/insert_comment_record", { :controller => "comments", :action => "create" })
 
   # DELETE
 
